@@ -36,6 +36,9 @@ RUN apt-get install -y --no-install-recommends git-core ca-certificates
  RUN apt-get update
  RUN apt-get install nodejs -y mocha chai
  RUN npm install -g semantic-release @semantic-release/gitlab
+ # Install the magic wrapper.
+ADD ./wrapdocker /usr/local/bin/wrapdocker
+RUN chmod +x /usr/local/bin/wrapdocker
 #RUN sudo wrapdocker
 # CMD ["/bin/bash","wrapdocker"]
 # CMD ["/bin/bash", "-c", "while true; do sleep 30; done;"]
