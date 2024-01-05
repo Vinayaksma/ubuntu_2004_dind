@@ -39,6 +39,8 @@ RUN apt-get install -y --no-install-recommends git-core ca-certificates
  # Install the magic wrapper.
 ADD ./wrapdocker /usr/local/bin/wrapdocker
 RUN chmod +x /usr/local/bin/wrapdocker
+VOLUME /var/lib/docker
+RUN docker --version
 #RUN sudo wrapdocker
 # CMD ["/bin/bash","wrapdocker"]
 # CMD ["/bin/bash", "-c", "while true; do sleep 30; done;"]
